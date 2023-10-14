@@ -88,3 +88,22 @@ web
 
 
 This inventory file defines a `web` group with two hosts and a `prod` group that includes the `web` group using the `children` keyword. This means that any playbook or ad-hoc command that targets the `prod` group will also target the `web` group.
+
+
+
+## YAML syntax for an Ansible playbook file
+
+'''
+---
+- name: [name of the playbook]
+  hosts: [name of the host group or specific host]
+  become: [yes or no, indicating whether to run the playbook with elevated privileges]
+  tasks:
+    - name: [name of the task]
+      [name of the module]:
+        [module parameters]
+    - name: [name of another task]
+      [name of another module]:
+        [module parameters]
+      
+      '''
