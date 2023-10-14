@@ -281,3 +281,14 @@ To decrypt the secrets.yml file, run the following command:
 to execute the playbook 
 #ansible-playbook -i inventory my_playbook.yml
 
+
+
+
+
+![Screenshot (242)](https://github.com/ravi11112/Ansible/assets/105406469/e62f93f6-08f2-45dd-b573-fc70f2ca899c)
+
+
+![Screenshot (240)](https://github.com/ravi11112/Ansible/assets/105406469/50172d50-1680-4a9c-9482-d270907004dc)
+
+
+
