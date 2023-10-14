@@ -139,6 +139,7 @@ This inventory file defines a `web` group with two hosts and a `prod` group that
        dest: /etc/config/file
 
 ```
+#ansible-playbook  -vv -i inventory my_playbook.yml
 
 
 
@@ -273,3 +274,10 @@ To decrypt the secrets.yml file, run the following command:
 - defaults: This section contains default variables that are used by the role if no other value is specified. These variables can also be overridden by the user.
 
 - library: This section contains custom modules that are used by the role.
+
+
+#ansible-galaxy init <role_name>
+
+to execute the playbook 
+#ansible-playbook -i inventory my_playbook.yml
+
