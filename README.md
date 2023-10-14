@@ -93,7 +93,7 @@ This inventory file defines a `web` group with two hosts and a `prod` group that
 
 ## YAML syntax for an Ansible playbook file
 
-'''
+```
 ---
 - name: [name of the playbook]
   hosts: [name of the host group or specific host]
@@ -105,5 +105,5 @@ This inventory file defines a `web` group with two hosts and a `prod` group that
     - name: [name of another task]
       [name of another module]:
         [module parameters]
-      
-      '''
+
+```
