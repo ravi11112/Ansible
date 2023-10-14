@@ -107,3 +107,90 @@ This inventory file defines a `web` group with two hosts and a `prod` group that
         [module parameters]
 
 ```
+
+- The playbook starts with "---" and ends with "...".
+- The "name" field is a description of the playbook.
+- The "hosts" field specifies the target hosts or host group.
+- The "become" field specifies whether to run the playbook with elevated privileges.
+- The "tasks" field contains a list of tasks to be executed.
+- Each task has a "name" field and a module name, followed by any necessary parameters for that module.
+
+
+<b>For example, the following playbook installs the Apache web server and starts it</b>
+
+
+```
+---
+- name: Install and start Apache
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Install Apache
+      yum:
+        name: httpd
+        state: present
+    - name: Start Apache
+      service:
+        name: httpd
+        state: started
+    - name: Copy configuration file to node
+      copy:
+       src: /path/to/config/file
+       dest: /etc/config/file
+
+```
+
+
+
+## Modules in Ansible 
+
+<b> yum : for install some package
+(present , latest ,installed,absent)  </b>
+
+<b> service: to start the service
+(started,stopped,restarted,reloaded) </b>
+
+<b> copy: copy some file from host to node.</b>
+
+
+
+
+## Variable in Ansible 
+
+// in similar identation of host we define the variable
+
+like **vars:**
+
+then <b> var name: var value to store </b>
+
+for call the variable we use jinja2 like <b> {{ var name}} </b>
+
+
+you can also create a **varfiles**  in this define the variable.
+
+and in playbook define a section like 
+
+<b> var_files:
+      - varfiles  </b>
+
+
+**variable example **
+
+
+```
+---
+- name: Example playbook with variables
+  hosts: all
+  become: yes
+  vars:                            #var_files:
+    my_var: "Hello, world!"           # - varfiles
+  tasks:
+    - name: Print variable
+      debug:
+        msg: "{{ my_var }}"
+```
+
+
+
+
+
