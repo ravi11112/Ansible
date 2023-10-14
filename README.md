@@ -172,11 +172,11 @@ and in playbook define a section like
 
 <b> var_files:
 
-     - varfiles  
-  </b>
+   - varfiles  
+ </b>
 
 
-**variable example **
+**variable example**
 
 
 ```
@@ -209,7 +209,7 @@ and in playbook define a section like
 - To define a handler, the notify and handlers directives are used. The notify directive triggers the execution of the task(s) specified in the handlers section.
 
 
-** Handlers example **
+**Handlers example**
 
 ```
 ---
@@ -241,13 +241,13 @@ is a feature in Ansible that allows users to encrypt sensitive data such as pass
 
 To encrypt a file named secrets.yml using Ansible Vault, run the following command: 
 
-# ansible-vault encrypt secrets.yml
+#ansible-vault encrypt secrets.yml
 
 set password 
 
 To decrypt the secrets.yml file, run the following command:
 
-# ansible-vault decrypt secrets.yml
+#ansible-vault decrypt secrets.yml
 
 
 
