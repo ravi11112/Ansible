@@ -171,7 +171,9 @@ you can also create a **varfiles**  in this define the variable.
 and in playbook define a section like 
 
 <b> var_files:
-      - varfiles  </b>
+
+     - varfiles  
+  </b>
 
 
 **variable example **
@@ -191,6 +193,61 @@ and in playbook define a section like
 ```
 
 
+
+## Ansible Handlers
+
+- Handlers are just like other tasks in a playbook, the difference being that they are triggered using the notify directive, and are only run when there is a change of state.
+
+- A handler should have a globally unique name within the playbook.
+
+- If multiple handlers are defined with the same name, only the first one will be called. The remaining handlers will be ignored.
+
+- Handlers always run in the order in which they are defined in the handlers section, and not in the notify section.
+
+- If the state of a task remains unchanged, the handler will not run. As such, handlers help in achieving idempotency. Hence a handler task only runs if there is a change in state, else it doesn't.
+
+- To define a handler, the notify and handlers directives are used. The notify directive triggers the execution of the task(s) specified in the handlers section.
+
+
+** Handlers example **
+
+```
+---
+- hosts: staging
+  name: Install
+  become: yes
+  tasks:
+    - name: Install Apache2 on Ubuntu server
+      apt:
+        name: apache2
+        state: present
+        update_cache: yes
+      notify:
+        - Restart apache2
+  handlers:
+    - name: Restart apache2
+      service:
+        name: apache2
+        state: restarted
+```
+
+## Ansible Vault 
+
+is a feature in Ansible that allows users to encrypt sensitive data such as passwords, API keys, and other confidential information by using symmetric encryption to encrypt files and their contents
+
+
+. Ansible Vault can encrypt any structured data file used by Ansible, including group variables files from inventory, host variables files from inventory, variables files passed to ansible-playbook with -e @file.yml or -e @file.json, variables files loaded by include_vars or vars_files, variables files in roles defaults files in roles tasks files, handlers files, binary files, or other arbitrary files
+
+
+To encrypt a file named secrets.yml using Ansible Vault, run the following command: 
+
+# ansible-vault encrypt secrets.yml
+
+set password 
+
+To decrypt the secrets.yml file, run the following command:
+
+# ansible-vault decrypt secrets.yml
 
 
 
