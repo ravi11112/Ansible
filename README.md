@@ -278,7 +278,9 @@ To decrypt the secrets.yml file, run the following command:
 
 #ansible-galaxy init <role_name>
 
+
 to execute the playbook 
+
 #ansible-playbook -i inventory my_playbook.yml
 
 
