@@ -108,7 +108,7 @@ This inventory file defines a `web` group with two hosts and a `prod` group that
 
 ```
 
-- The playbook starts with "---" and ends with "...".
+- The playbook starts with "---" .
 - The "name" field is a description of the playbook.
 - The "hosts" field specifies the target hosts or host group.
 - The "become" field specifies whether to run the playbook with elevated privileges.
