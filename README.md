@@ -116,22 +116,22 @@ This inventory file defines a `web` group with two hosts and a `prod` group that
 - Each task has a "name" field and a module name, followed by any necessary parameters for that module.
 
 
-<b>For example, the following playbook installs the Apache web server and starts it</b>
+<b>For example, the following playbook installs the nginx web server and starts it</b>
 
 
 ```
 ---
-- name: Install and start Apache
+- name: Install and start nginx
   hosts: webservers
   become: yes
   tasks:
-    - name: Install Apache
+    - name: Install nginx
       yum:
-        name: httpd
+        name: nginx
         state: present
-    - name: Start Apache
+    - name: Start nginx
       service:
-        name: httpd
+        name: nginx
         state: started
     - name: Copy configuration file to node
       copy:
