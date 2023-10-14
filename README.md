@@ -38,7 +38,7 @@ In many cases, using both Terraform and Ansible together can provide a comprehen
 
 
 
-##connect your host ansible to the target using SSH
+## connect your host ansible to the target using SSH
 
 
 To connect your Ansible host with a node using SSH, you can use Ansible to generate an SSH key pair on the host and copy the public key to the node's authorized_keys file. Here are the steps to do this:
@@ -47,7 +47,7 @@ Copy the public key to the node's authorized_keys file.
 
 
 
-##AD-hoc commands use for simple task   and inventory to store ip,hostname,ssh,...
+## AD-hoc commands use for simple task   and inventory to store ip,hostname,ssh,...
 
 
 *Ad-hoc commands* are one-off commands that you can run on one or more hosts using the `ansible` command-line tool. Ad-hoc commands are useful for tasks that you don't need to run frequently or that don't require a full playbook. Ad-hoc commands are specified using the `-m` flag, which stands for "module", and the `-a` flag, which stands for "arguments". For example, the following ad-hoc command uses the `shell` module to run the `touch` command on all hosts in the inventory file:
