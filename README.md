@@ -250,4 +250,26 @@ To decrypt the secrets.yml file, run the following command:
 #ansible-vault decrypt secrets.yml
 
 
+# Ansible Roles
 
+<b> Ansible Roles are a way to organize and package your automation tasks into reusable components. They provide a structured approach to managing your playbook code and make it easier to share and maintain your Ansible automation </b>
+
+
+
+**Ansible roles are organized into different sections, each with a specific purpose. Here are the different sections in an Ansible role and a brief explanation of each:**
+
+- tasks: This section contains the main list of tasks that the role executes. It is the entry point for a role, and all tasks derive from it.
+
+- vars: This section contains variables that are used by the role. These variables can be overridden by the user.
+  
+- handlers: This section contains handlers, which are tasks that are only executed when notified by another task. Handlers are useful for restarting services or triggering other actions that depend on the success of a task.
+
+- files: This section contains static files that are copied to the target system.
+
+- templates: This section contains files that are used to generate configuration files or other text files.
+
+- meta: This section contains metadata about the role, such as its author, dependencies, and version.
+
+- defaults: This section contains default variables that are used by the role if no other value is specified. These variables can also be overridden by the user.
+
+- library: This section contains custom modules that are used by the role.
